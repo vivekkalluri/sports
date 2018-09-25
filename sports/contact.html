@@ -43,36 +43,45 @@
     </nav>
     
    
-    <form>
+  
     
         <div class="container">
         <div class="row">
         <div class="col-md-6">
         <div class="customDiv">
         </div>
-        
-    <input type="text" class="form-control" placeholder="Firstname">
+          <form onsubmit="return myFun()" >
+    <input type="text" id="simpleNavBar" class="form-control" name="Email" placeholder="Firstname">
             
     <input type="text" class="form-control"s placeholder="Lastname">
   
     <input type="text" class="form-control" placeholder="Email address">
         
     <input type="text" class="form-control" placeholder="Password">
-                           
+              
+    <input type="text" class="form-control" placeholder="mobile" id="mobilenumber">
+                  <p id="Mob"> </p>         
       
     <button type="submit" class="btn btn-danger">Register</button>
         
-    <button type="submit" class="btn btn-primary">Signin</button>
-    </div>
-      
+    <input type="submit" class="btn btn-primary" value="submit">
+              
+              
+              
+              
+                  
+
+            </form>
+          
+            </div>
     
         <div class="col-md-6">
         <div class="customDiv"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15224.999272541652!2d78.36776457169226!3d17.447753158677685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93dc8c5d69df%3A0x19688beb557fa0ee!2sHITEC+City%2C+Hyderabad%2C+Telangana+500081!5e0!3m2!1sen!2sin!4v1537442449096" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
         </div>
             </div>
-        </div>
+        
     
-    </form>
+  
 
 <!-- BODY ENDS -->
 <script src="bootstrap/js/fontawesome-all.js"></script>
@@ -80,6 +89,60 @@
 <script src="bootstrap/js/popper.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="bootstrap/js/mdb.min.js"></script>
+    <script>
+    
+    
+function myFun() {
+	var a = document.myForm.Email.value;     // raju@gmail.com
+	if(a.indexOf('@')<=0) {   //@gmail.com
+		document.getElementById("simpleNavBar").innerHTML ="Invalid @ position ";
+		return false;
+	}
+	//thapa@gmail.com  
+	if(a.charAt(a.length-4)!='.') {
+		document.getElementById("simpleNavBar").innerHTML ="Invalid . position ";
+		return false;
+	}
+	//thapa@gmail.co
+	if(a.charAt(a.length-3)!='.') {
+		document.getElementById("simpleNavBar").innerHTML ="Invalid . position ";
+		return false;
+	}
+	
+    
+  
+	
+	var b = document.getElementById("mobilenumber").value;  
+	if(b == "") {  
+		document.getElementById("Mob").innerHTML ="Please Enter Mobile Number";
+		return false;
+	}
+
+	if(isNaN(b)) {  
+		document.getElementById("Mob").innerHTML ="Please Enter Numeric values";
+		return false;
+	}
+
+
+	
+	if(b.length<10) {
+		document.getElementById("Mob").innerHTML ="Mobile Number must be 10 digits";
+		return false;
+	}
+	
+	if(b.length>10) {
+		document.getElementById("Mob").innerHTML ="Mobile Number must be 10 digits ";
+		return false;
+	}
+	
+
+    
+    
+    
+
+}
+    
+    </script>
         
 </body>
 </html>

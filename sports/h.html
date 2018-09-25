@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Form-1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/fontawesome-all.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/mdb.css">
+    <link rel="stylesheet" href="bootstrap/css/style.css">  
+    <title>Navbar in Bootstrap4</title>
+</head>
+
+<body>
+
+
+
+  
+    
+       <div class="container">
+        <div class="row">
+        <div class="col-md-6">
+        <div class="customDiv">
+        </div> 
+          <form name="myForm" onsubmit="return myFun()" >
+              
+               <span id="simpleNavBar"></span>
+              
+    <input type="text"   name="Email" placeholder="Firstname" id="Email"> 
+           
+     <input type="text" class="form-control"s placeholder="Lastname">
+  
+    <input type="text" class="form-control" placeholder="Email address">
+        
+    <input type="password" class="form-control"  id="password">
+              <p id="pass"></p>
+              
+              <input type="password" class="form-control"  id="passwords">
+              <p id="passw"></p>
+              
+              
+     <input type="text" class="form-control" placeholder="mobile" id="mobilenumber">
+                  <p id="Mob"> </p>
+        
+    <input type="submit"  value="submit">
+            </form>
+    </div> 
+           </div>  
+    </div>
+    
+    
+  
+
+<!-- BODY ENDS -->
+<script src="bootstrap/js/fontawesome-all.js"></script>
+<script src="bootstrap/js/jquery-3.2.1.min.js"></script>
+<script src="bootstrap/js/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/mdb.min.js"></script>  
+    <script>
+    
+    
+function myFun() {
+	
+	
+
+
+	
+
+    var c = document.getElementById("password").value;   
+	var d = document.getElementById("passwords").value;  
+
+	if(c == "") {  
+		document.getElementById("pass").innerHTML ="Please Fill Password";
+		return false;
+	}
+	
+	if(c.length<5) {
+		document.getElementById("pass").innerHTML ="Please Enter five characters ";
+		return false;
+	}
+	
+	if(c.length>20) {
+		document.getElementById("pass").innerHTML ="Please Enter less than 20 characters ";
+		return false;
+	}
+	
+	if(c!=d){
+		document.getElementById("passw").innerHTML ="Password Mismatch ";
+		return false;
+	}
+
+    var b = document.getElementById("mobilenumber").value;  
+	if(b == "") {  
+		document.getElementById("Mob").innerHTML ="Please Enter Mobile Number";
+		return false;
+	}
+
+	if(isNaN(b)) {  
+		document.getElementById("Mob").innerHTML ="Please Enter Numeric values";
+		return false;
+	}
+
+
+	
+	if(b.length<10) {
+		document.getElementById("Mob").innerHTML ="Mobile Number must be 10 digits";
+		return false;
+	}
+	
+	if(b.length>10) {
+		document.getElementById("Mob").innerHTML ="Mobile Number must be 10 digits ";
+		return false;
+	}
+    
+    var a = document.getElementById("Email").value;
+	if(a.indexOf('@')<=0) {   //@gmail.com
+		document.getElementById("simpleNavBar").innerHTML ="Invalid @ position ";
+		return false;
+	}
+	//thapa@gmail.com  
+	if(a.charAt(a.length-4)!='.') {
+		document.getElementById("simpleNavBar").innerHTML ="Invalid . position ";
+		return false;
+	}
+	//thapa@gmail.co
+	if(a.charAt(a.length-3)!='.') {
+		document.getElementById("simpleNavBar").innerHTML ="Invalid . position ";
+		return false;
+	}
+    
+    
+}
+    
+    
+
+
+    
+    </script>
+        
+</body>
+</html>
+
